@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -8,16 +7,19 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
+  devServer: {
+    port: 3001, // Ensure this matches the port in package.json
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    hot: true,
+  },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
-          },
         },
       },
       {
@@ -28,25 +30,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html',
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: 'public/registry.json', to: 'registry.json' }
-      ]
+      template: './src/index.html',
     }),
   ],
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
-    compress: true,
-    port: 3000,
-    hot: true,
-  },
-  devtool: "source-map",
-  mode: "development",
-  experiments: {
-    asyncWebAssembly: true,
-  }
 };
