@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -8,10 +9,14 @@ module.exports = {
     filename: 'bundle.js',
   },
   devServer: {
-    port: 3001, // Ensure this matches the port in package.json
-    contentBase: path.join(__dirname, 'dist'),
+    port: 3001,
+    static: path.join(__dirname, 'dist'),
     compress: true,
     hot: true,
+  },
+  experiments: {
+    futureDefaults: true,
+    css: false
   },
   module: {
     rules: [
@@ -24,7 +29,47 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              esModule: false,
+              modules: {
+                namedExport: false,
+              },
+            },
+          },
+        ],
+        type: 'javascript/auto'
+      },
+      {
+        test: /\.wasm$/,
+        type: "webassembly/async",
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/fonts/',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/img/',
+            },
+          },
+        ],
       },
     ],
   },
@@ -32,5 +77,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: '../wasm/pkg/risc_zero_verifier_bg.wasm', to: 'risc_zero_verifier_bg.wasm' }
+      ]
+    }),
   ],
+  resolve: {
+    extensions: ['.js', '.wasm'],
+    fallback: {
+      "global": require.resolve("global")
+    }
+  },
 };
