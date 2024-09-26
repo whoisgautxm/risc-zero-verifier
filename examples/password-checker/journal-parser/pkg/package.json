@@ -1,0 +1,15 @@
+{
+  "name": "password-checker-journal-parser",
+  "type": "module",
+  "version": "0.0.0",
+  "files": [
+    "password_checker_journal_parser_bg.wasm",
+    "password_checker_journal_parser.js",
+    "password_checker_journal_parser.d.ts"
+  ],
+  "main": "password_checker_journal_parser.js",
+  "types": "password_checker_journal_parser.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
