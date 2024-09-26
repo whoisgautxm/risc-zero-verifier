@@ -1,12 +1,24 @@
 {
   "parsers": [
+      {
+        "schemaVersion": "1",
+        "profile": {
+          "name": "verify-attestation",
+          "version": "0.0.0"
+        },
+        "guestCodeId": "8a1187ee7df9dcaab0d44aa09e816a0e769cc9c7ba367c0e76b643cd5be92f07",
+        "journalParser": {
+          "protocol": "ipfs",
+          "src": "QmWRceSL3twbvqMVQrYivz3uHFB5ox4RnUuVsxbNuK6Gir/verifyAttestation_journal_parser.js"
+        }
+      },
     {
       "schemaVersion": "1",
       "profile": {
         "name": "zk-hash-converter",
         "version": "0.0.0"
       },
-      "guestCodeId": "96a8bc4a72198728a5395214cdbaf4d3ef66d7da4459d8874d737344ba939f61",
+      "guestCodeId": "96a8bc4a72198728a5395214cdbaf4d3ef66d7da4459d8874d737344ba939f6",
       "journalParser": {
         "protocol": "ipfs",
         "src": "bafybeibvp5bwgahmwdulxla3mmbdgvpafznmcnegafkykpif5z2myiz4r4/zk_hash_converter_verifier.js"
@@ -51,7 +63,7 @@
       "guestCodeId": "949f5f6ee1220151a2c55e1b04cb7fae676d647e18aefa2b7a55acca67684c3f",
       "journalParser": {
         "protocol": "ipfs",
-        "src": "bafybeih2ek3ycsssiwwv6kakjqta5t3go73nsztn7thbikn453xnpxsjpm/password_checker_journal_parser.js"
+        "src": "bafkreidejkd22wdpryekimubjbtynlgxvw5idptpbz3vriaklvipruv4mm/password_checker_journal_parser.js"
       }
     }
   ]

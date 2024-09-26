@@ -84,9 +84,6 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: ['.js', '.wasm'],
-    fallback: {
-      "global": require.resolve("global")
-    }
+    extensions: ['.js', '.wasm']
   },
 };

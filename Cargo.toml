@@ -2,6 +2,8 @@
 members = [
     "examples/password-checker",
     "examples/password-checker/journal-parser",
+    "examples/verifyAttestation",
+    "examples/verifyAttestation/journal-parser",
     "wasm",
 ]
 resolver = "2"
