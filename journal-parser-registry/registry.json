@@ -6,10 +6,10 @@
           "name": "verify-attestation",
           "version": "0.0.0"
         },
-        "guestCodeId": "8a1187ee7df9dcaab0d44aa09e816a0e769cc9c7ba367c0e76b643cd5be92f07",
+        "guestCodeId": "87f98b5ab1503fb8e10c84f0a52365ef05dce005fe9e30a72f33f249381e81af",
         "journalParser": {
           "protocol": "ipfs",
-          "src": "QmWRceSL3twbvqMVQrYivz3uHFB5ox4RnUuVsxbNuK6Gir/verifyAttestation_journal_parser.js"
+          "src": "Qmc3cAvmW1V5vvkoJL9RFyZjF4zfkBaMiEYB2w5fAbXyHd/verifyAttestation_journal_parser.js"
         }
       },
     {
