@@ -1,4 +1,8 @@
 {
   "private": true,
-  "workspaces": ["react", "wasm/pkg", "web"]
+  "workspaces": [
+    "react",
+    "wasm/pkg",
+    "web"
+  ]
 }

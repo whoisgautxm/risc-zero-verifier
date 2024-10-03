@@ -1,3 +1,14 @@
+# To run the Repo - 
+- on apple silicon - ```sudo make all```
+-  then - ``` cd web ```
+-  after that - ``` sudo yarn install```
+-  To run the server - ``` yarn start ```
+
+### Make sure to have - [wasm-pack](https://rustwasm.github.io/)
+
+
+
+
 # RISC Zero zkVM Receipt Verifier
 
 This is a verifier for [RISC Zero zkVM](https://dev.risczero.com/api/zkvm/) execution receipts.
