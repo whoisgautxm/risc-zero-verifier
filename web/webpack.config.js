@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack'); // Required for the ProvidePlugin
 
 module.exports = {
   entry: './src/index.js',
@@ -82,8 +83,15 @@ module.exports = {
         { from: '../wasm/pkg/risc_zero_verifier_bg.wasm', to: 'risc_zero_verifier_bg.wasm' }
       ]
     }),
+    // Polyfill the global object
+    new webpack.ProvidePlugin({
+      global: 'global', 
+    }),
   ],
   resolve: {
-    extensions: ['.js', '.wasm']
+    extensions: ['.js', '.wasm'],
+    fallback: {
+      global: require.resolve('global') // Add fallback for global
+    }
   },
 };
