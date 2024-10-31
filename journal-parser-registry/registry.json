@@ -6,7 +6,7 @@
           "name": "verify-attestation",
           "version": "0.0.0"
         },
-        "guestCodeId": "87f98b5ab1503fb8e10c84f0a52365ef05dce005fe9e30a72f33f249381e81af",
+        "guestCodeId": "6fd3dee51b7c19715e86ae692cec40460b7be8a404e08f001018ec2071acad28",
         "journalParser": {
           "protocol": "ipfs",
           "src": "Qmc3cAvmW1V5vvkoJL9RFyZjF4zfkBaMiEYB2w5fAbXyHd/verifyAttestation_journal_parser.js"
