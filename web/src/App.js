@@ -30,7 +30,7 @@ function App() {
         <Verifier
           enableJournalParser={true}
           onStatus={onVerifierStatus}
-          registryUrl="https://ipfs.filebase.io/ipfs/QmUgdkzyzrkHvfzqWbSidFqHHL9BpfZ4azcawY5g9WwNav"
+          registryUrl="https://ipfs.filebase.io/ipfs/QmX3QKTYGQY7iCBUDkzj2BgZt5Lzo5qkL5YxV67sezVjKQ"
           ipfsGateway="https://ipfs.filebase.io"
         />
         <div className="info">
